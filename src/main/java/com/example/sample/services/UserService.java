@@ -9,4 +9,6 @@ public interface UserService {
     public UserNameDto get();
 
     public UserNameDto findUserNameById();
+
+    public void testFunctionalInterface();
 }

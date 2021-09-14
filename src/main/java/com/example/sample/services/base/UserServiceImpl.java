@@ -4,6 +4,7 @@ import com.example.sample.domains.User;
 import com.example.sample.dtos.UserNameDto;
 import com.example.sample.repositories.UserRepository;
 import com.example.sample.services.UserService;
+import com.example.sample.services.components.SampleComponent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private User user; //from component
+
 
     public User create(){
         User user = new User();
@@ -32,6 +34,14 @@ public class UserServiceImpl implements UserService {
 
     public UserNameDto findUserNameById(){
         return userRepository.findUserNameById("a9a4e27e-4c14-4613-ab70-f6d55564614a");
+    }
+
+    public void testFunctionalInterface(){
+        SampleComponent sampleComponent = () -> {
+            System.out.println("Component");
+            SampleComponent.cal();
+        };
+        sampleComponent.execute();
     }
 
 

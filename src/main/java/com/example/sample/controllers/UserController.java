@@ -24,6 +24,7 @@ public class UserController {
 
     @GetMapping
     public @ResponseBody UserNameDto get(){
+        userService.testFunctionalInterface();
         return userService.get();
     }
 
